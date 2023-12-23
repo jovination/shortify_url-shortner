@@ -7,6 +7,9 @@ header{
     height: 70px;
     padding-top: 1em;    
     background: #2D2E30;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 body{
     margin: 0;
@@ -38,8 +41,8 @@ body::-webkit-scrollbar{
 
 
 .section-one{
-     width: 100%;
-   background: #2D2E30;
+    width: 100%;
+    background: #2D2E30;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,14 +70,14 @@ body::-webkit-scrollbar{
 .site-name{
     color: #FFF;
     font-family: Poppins;
-    font-size: 28px;
+    font-size: 24px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
 }
 .logo{
-     width: 70px;
-     height: 70px;
+     width: 60px;
+     height: 60px;
 }
 
 .nav-buttons  li{
@@ -107,22 +110,24 @@ body::-webkit-scrollbar{
     gap: 4em;
     margin-top: 5em
 }
-
+.upper-wrapper{
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+}
 .upper-wrapper h1{
     margin: 0;
     color: #FFF;
     font-family: Poppins;
-    font-size: 60px;
+    font-size: 50px;
     font-style: normal;
-    font-weight: bold;
-    line-height: 65px; /* 108.333% */
+    font-weight: 600;
+    line-height: 65px; 
 }
 .wrapper p{
-    margin-top: 2em;
     color: #FFF;
     font-family: Poppins;
-    font-size: 20px;
-    font-weight: 300;
+    font-size: 18px;
     line-height: normal;
 }
 .lower-wrapper{
@@ -160,6 +165,7 @@ body::-webkit-scrollbar{
     position: relative;
     padding-bottom: 5px;
 }
+
 .how-it-works::after{
     content: '';
     position: absolute;
@@ -169,6 +175,14 @@ body::-webkit-scrollbar{
     height: 1px;
     background: #FFF;
     border-radius: 10px;
+}
+.left-column{
+    width: 532px;
+    height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 70px;
 }
 
 .right-column{
