@@ -309,8 +309,7 @@ input[type="url"] {
     line-height: normal;
     background: white;  
 }
-.active,
-.btn2:hover{
+.active{
     background: #7F52FF;
     color: #fff;
 }
@@ -601,4 +600,9 @@ color: #7F52FF;
     margin: 0;
     margin-top: 1em;
     margin-left: 2em;
+}
+.link__icon,
+.qr__link{
+    width: 24px;
+    height: 24px;
 }
