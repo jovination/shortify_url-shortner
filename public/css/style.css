@@ -1,6 +1,7 @@
 html{
     font-family: 'Poppins', sans-serif;
     font-size: 90%;
+    scroll-behavior: smooth;
 }
 header{
     width: 100%;
@@ -211,7 +212,7 @@ body::-webkit-scrollbar{
     border-radius: 15px;
     border: 1px solid rgba(238, 238, 238, 0.48);
     background: #F5F4F4;
-    padding: 0em 2em;
+    padding: 0 12px;
 
 }
 span{
@@ -605,4 +606,8 @@ color: #7F52FF;
 .qr__link{
     width: 24px;
     height: 24px;
+}
+.link2,
+.qr2{
+    display: none;
 }
