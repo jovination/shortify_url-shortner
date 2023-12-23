@@ -238,7 +238,7 @@ span{
     border-radius: 36px;
     border: 1.5px solid #7E7E7F;
     background: rgba(217, 217, 217, 0.00);
-    padding: .1em;
+    padding: 5px;
     
 }
 
@@ -271,7 +271,7 @@ input[type="url"] {
 .link-icon{
     width:28px;
     height: 28px;
-    margin-left: 1.5em;
+    margin-left: 12px;
 }
 .hidden {
     display: none;
@@ -298,7 +298,7 @@ input[type="url"] {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    gap: 10px; /* Adjust the gap between icon and text */
+    gap: 10px; 
     border: none;
     border-radius: 6px;
     padding: .5em .8em ;
@@ -309,7 +309,8 @@ input[type="url"] {
     line-height: normal;
     background: white;  
 }
-.btn1{
+.active,
+.btn2:hover{
     background: #7F52FF;
     color: #fff;
 }
@@ -327,21 +328,19 @@ input[type="url"] {
 }
 .wrapper2{
     display: flex;
-    gap: 2em;
-    margin-top: 5em;
+    gap: 30px;
+    margin-top: 50px;
 }
 .wright-column{
     width: 620px;
     height: 360px;
-    flex-shrink: 0;
     border-radius: 20px;
-    border: 2px solid #A8A8A8;    display: flex;
-    flex-direction: column;
+    border: 2px solid #A8A8A8;   
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 12px;
-    padding: 1em;
+    padding: 12px;
 }
 .rec{
     position: relative;
@@ -466,16 +465,14 @@ input[type="url"] {
     margin: 0;
 }*/
 
-.trusted-by h2{
+.t-by{
     margin: 0;
-    display: inline-block;
     text-transform: uppercase;
     color: #000;
     font-family: Poppins;
-    font-size: 30px;
+    font-size: 25px;
     font-style: normal;
-    font-weight: 700;
-    line-height: 50px; /* 125% */
+    font-weight: 600;
 
 }
 .wr-upper{
