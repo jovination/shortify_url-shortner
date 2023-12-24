@@ -9,8 +9,12 @@ document.addEventListener('DOMContentLoaded', function() {
     let url__txt = document.getElementById('fullUrl');
     let qr__txt = "Generate QR Code";
     let original__txt = f__header.innerHTML; // store the original text
-    let qr__url = "Enter Your text Here"; //
+    let qr__url = "Enter Your Text Here!"; //
     let original__url = url__txt.placeholder; // store the original text
+    let shortenBtn = document.querySelector('.shorten-btn');
+    let generate__txt = "Generate QR";
+    let shorten__txt = shortenBtn.textContent; // store the original text 
+
 
     fun__btn1.onclick = () => {
         fun__btn1.classList.add('active');
@@ -19,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (fun__btn1.classList.contains('active')) {
             f__header.innerHTML = original__txt; // set to original text
             url__txt.placeholder = original__url;
+            shortenBtn.textContent = shorten__txt;
         }
     };
 
@@ -33,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (fun__btn2.classList.contains('active')) {
             f__header.innerHTML = qr__txt;
             url__txt.placeholder = qr__url;
+            shortenBtn.textContent = generate__txt;
         }
     }
 
