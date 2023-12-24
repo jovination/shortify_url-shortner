@@ -57,17 +57,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function generateQr() {
         //add the qr code API to the qr__code div
-        if(url__txt.value.length > 0) { 
             qr__code.src = "https://api.qrserver.com/v1/create-qr-code/?size=130x130&data=" + url__txt.value;
             qr__code.onload = function() {
                 loader.style.display = 'none'; // hide the loader when the QR code has loaded
             };
-        } else {
-            url__txt.classList.add('error');
-            setTimeout(() => {
-                url__txt.classList.remove('error');
-            }, 1000);
-    }
+         
 }
     
 
