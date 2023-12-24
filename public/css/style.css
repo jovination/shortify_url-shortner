@@ -131,7 +131,9 @@ body::-webkit-scrollbar{
     font-family: Poppins;
     font-size: 18px;
     line-height: normal;
+    
 }
+
 .lower-wrapper{
     margin-top: 3.5em;
     display: flex;
@@ -140,15 +142,19 @@ body::-webkit-scrollbar{
 }
 .get-started{
     text-decoration: none;
-    border-radius: 33px;
+    border-radius: 30px;
     background: #000;
     padding: .85em 1.8em;
     color: #FFF;
     font-family: Poppins;
     font-size: 18px;
     font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+
+    &:hover {
+        background-color: #7F52FF;
+        transition: .5s;
+        color: white;
+    }
 }
     
 
@@ -307,13 +313,11 @@ input[type="url"] {
     font-weight: 500;
     line-height: normal;
     background: white;
-    transition: color 0.15s ease-in;
   
 }
 .active{
     background: #7F52FF;
     color: #fff;
-    transition: 0.25s ease-out;
 
 }
 .link1{
@@ -395,9 +399,7 @@ input[type="url"] {
     color: #FFF;
     font-family: Poppins;
     font-size: 20px;
-    font-style: normal;
     font-weight: 400;
-    line-height: normal;
     margin: 0;
 }
 .w-lower{
