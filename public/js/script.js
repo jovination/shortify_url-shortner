@@ -39,24 +39,28 @@ document.addEventListener('DOMContentLoaded', function() {
         generateQrCode();
     };
 
-
     shortenBtn.onclick = () => {
+        // Clear the QR code
+        qr__code.src = "";
+    
         if(fun__btn2.classList.contains('active')) {
-            if(url__txt.value.trim() === '') {
+            if(url__txt.value.trim() !== '') {
+                loader.style.display = 'block'; // show the loader
+                setTimeout(generateQr, 500); // delay of 500ms before generating the QR code
+            } else {
+                // If url__txt is empty, add the 'error' class to it
                 url__txt.classList.add('error');
                 setTimeout(() => {
-                    url__txt.classList.remove('error');
+                    url__txt.classList.remove('error'); // Remove the 'error' class after 1 second
                 }, 1000);
-            } else {
-                loader.style.display = 'block'; // show the loader
-                generateQr();
             }
         }
     };
     
+    
 
     function generateQr() {
-        //add the qr code API to the qr__code div
+        //the qr code API to the qr__code div
             qr__code.src = "https://api.qrserver.com/v1/create-qr-code/?size=130x130&data=" + url__txt.value;
             qr__code.onload = function() {
                 loader.style.display = 'none'; // hide the loader when the QR code has loaded
