@@ -116,16 +116,17 @@ body::-webkit-scrollbar{
    flex-direction: column;
    gap: 20px;
 }
-.upper-wrapper h1{
+.uw-h1{
     margin: 0;
     color: #FFF;
     font-family: Poppins;
     font-size: 50px;
-    font-style: normal;
     font-weight: 600;
-    line-height: 65px; 
 }
-.wrapper p{
+
+
+
+.uw-p{
     color: #FFF;
     font-family: Poppins;
     font-size: 18px;
@@ -303,14 +304,17 @@ input[type="url"] {
     padding: .5em .8em ;
     font-family: Poppins;
     font-size: 16px;
-    font-style: normal;
     font-weight: 500;
     line-height: normal;
-    background: white;  
+    background: white;
+    transition: color 0.15s ease-in;
+  
 }
 .active{
     background: #7F52FF;
     color: #fff;
+    transition: 0.25s ease-out;
+
 }
 .link1{
     width: 22px;

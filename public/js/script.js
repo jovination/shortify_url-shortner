@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         fun__btn2.classList.add('active');
         fun__btn1.classList.remove('active');
         showQrIcon1();
-    }
+    };
 
     showLinkIcon1();
 });
