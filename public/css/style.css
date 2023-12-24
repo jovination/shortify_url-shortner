@@ -135,7 +135,6 @@ body::-webkit-scrollbar{
 }
 
 .lower-wrapper{
-    margin-top: 3.5em;
     display: flex;
     gap: 3em;
     align-items: center;
