@@ -41,21 +41,35 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     shortenBtn.onclick = () => {
-        if(url__txt.value && fun__btn2.classList.contains('active')) {
-            loader.style.display = 'block'; // show the loader
-            generateQr();
+        if(fun__btn2.classList.contains('active')) {
+            if(url__txt.value.trim() === '') {
+                url__txt.classList.add('error');
+                setTimeout(() => {
+                    url__txt.classList.remove('error');
+                }, 1000);
+            } else {
+                loader.style.display = 'block'; // show the loader
+                generateQr();
+            }
         }
     };
-
+    
 
     function generateQr() {
         //add the qr code API to the qr__code div
-        qr__code.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + url__txt.value;
-
-        qr__code.onload = function() {
-            loader.style.display = 'none'; // hide the loader when the QR code has loaded
-        };
+        if(url__txt.value.length > 0) { 
+            qr__code.src = "https://api.qrserver.com/v1/create-qr-code/?size=130x130&data=" + url__txt.value;
+            qr__code.onload = function() {
+                loader.style.display = 'none'; // hide the loader when the QR code has loaded
+            };
+        } else {
+            url__txt.classList.add('error');
+            setTimeout(() => {
+                url__txt.classList.remove('error');
+            }, 1000);
     }
+}
+    
 
 
     function generateQrCode() {

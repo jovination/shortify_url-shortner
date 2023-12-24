@@ -625,6 +625,42 @@ color: #7F52FF;
     align-items: center;
     position: relative;
 }
+.qr__container{
+    width: 160px;
+    border-radius: 5px;
+    max-height: 0;
+    overflow: hidden;
+}
+/*
+.qr__container img{
+    width: 100%;
+    padding: 10px;
+}
+*/
+
+.error{
+    animation: shake 0.1s 10;
+
+}
+@keyframes shake{
+    0%{
+        transform: translateX(0);
+    }
+    25%{
+        transform: translateX(-2px);
+    }
+    50%{
+        transform: translateX(0px);
+    }
+    75%{
+        transform: translateX(2px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+
+}
+
 .loader{
 position: absolute;
 top: 54px;
@@ -641,7 +677,6 @@ display: none;
   }
   
   .spinner.center {
-    
     margin: auto;
   }
   
