@@ -137,34 +137,31 @@ body::-webkit-scrollbar{
     gap: 3em;
     align-items: center;
 }
-.lower-wrapper a{
+.get-started{
     text-decoration: none;
     border-radius: 33px;
     background: #000;
     padding: .85em 1.8em;
     color: #FFF;
     font-family: Poppins;
-    font-size: 20px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
-.lower-wrapper span{
-    color: #FFF;
-    font-family: Poppins;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: normal;
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
+    
 
 
-}
+
 .how-it-works{
+    text-decoration: none;
     position: relative;
     padding-bottom: 5px;
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 18px;
+    position: relative;
+    cursor: pointer;
 }
 
 .how-it-works::after{
@@ -250,7 +247,7 @@ input[type="url"] {
     width: 220px;
     color: #1E1E1E;
     font-family: Poppins;
-    font-size: 20px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -270,8 +267,8 @@ input[type="url"] {
 
 }
 .link-icon{
-    width:28px;
-    height: 28px;
+    width:25px;
+    height: 25px;
     margin-left: 12px;
 }
 .hidden {
