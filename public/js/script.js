@@ -13,7 +13,9 @@ document.addEventListener('DOMContentLoaded', function() {
     let original__url = url__txt.placeholder; // store the original text
     let shortenBtn = document.querySelector('.shorten-btn');
     let generate__txt = "Generate QR";
-    let shorten__txt = shortenBtn.textContent; // store the original text 
+    let shorten__txt = shortenBtn.textContent; 
+    let qr__code = document.getElementById('qr__code');
+
 
 
     fun__btn1.onclick = () => {
@@ -24,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
             f__header.innerHTML = original__txt; // set to original text
             url__txt.placeholder = original__url;
             shortenBtn.textContent = shorten__txt;
+            qr__code.src = "";
         }
     };
 
@@ -33,6 +36,19 @@ document.addEventListener('DOMContentLoaded', function() {
         showQrIcon1();
         generateQrCode();
     };
+
+    shortenBtn.onclick = () => {
+        if(url__txt.value && fun__btn2.classList.contains('active')) {
+            generateQr(); // call the generateQr function here
+        }
+    };
+
+
+    function generateQr() {
+        //add the qr code API to the qr__code div
+        qr__code.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + url__txt.value;
+    }
+
 
     function generateQrCode() {
         if (fun__btn2.classList.contains('active')) {
