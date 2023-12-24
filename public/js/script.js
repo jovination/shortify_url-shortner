@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
     let generate__txt = "Generate QR";
     let shorten__txt = shortenBtn.textContent; 
     let qr__code = document.getElementById('qr__code');
+    let loader = document.querySelector('.loader'); // add this line
+
 
 
 
@@ -37,9 +39,11 @@ document.addEventListener('DOMContentLoaded', function() {
         generateQrCode();
     };
 
+
     shortenBtn.onclick = () => {
         if(url__txt.value && fun__btn2.classList.contains('active')) {
-            generateQr(); // call the generateQr function here
+            loader.style.display = 'block'; // show the loader
+            generateQr();
         }
     };
 
@@ -47,6 +51,10 @@ document.addEventListener('DOMContentLoaded', function() {
     function generateQr() {
         //add the qr code API to the qr__code div
         qr__code.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + url__txt.value;
+
+        qr__code.onload = function() {
+            loader.style.display = 'none'; // hide the loader when the QR code has loaded
+        };
     }
 
 
