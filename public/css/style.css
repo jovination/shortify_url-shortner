@@ -587,7 +587,7 @@ color: #7F52FF;
     font-family: Poppins;
     font-size: 24px;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 27.5px; /* 114.583% */
     text-transform: uppercase;
     margin: 0;
@@ -600,9 +600,6 @@ color: #7F52FF;
     color: #FFF;
     font-family: Poppins;
     font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
     margin: 0;
     margin-top: 1em;
     margin-left: 2em;
