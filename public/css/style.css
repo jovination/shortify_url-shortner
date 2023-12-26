@@ -109,7 +109,7 @@ body::-webkit-scrollbar{
 .wrapper{
     display: flex;
     gap: 4em;
-    margin-top: 5em
+    margin-top: 50px;
 }
 .upper-wrapper{
    display: flex;
@@ -121,7 +121,7 @@ body::-webkit-scrollbar{
     color: #FFF;
     font-family: Poppins;
     font-size: 50px;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 
