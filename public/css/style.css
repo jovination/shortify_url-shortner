@@ -251,6 +251,7 @@ input[type="url"] {
     outline: none; /* Remove the outline when focused */
     height: 48px;
     width: 220px;
+    background: transparent;
     color: #1E1E1E;
     font-family: Poppins;
     font-size: 18px;
