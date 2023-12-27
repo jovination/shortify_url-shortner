@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function() {
     let fun__btn1 = document.querySelector('.btn1');
     let fun__btn2 = document.querySelector('.btn2');
@@ -94,3 +95,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
     showLinkIcon1();
 });
+

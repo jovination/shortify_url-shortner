@@ -4,7 +4,7 @@ const connectDB = require('./config/db');
 const app = express();
 
 // Connect Database
-connectDB();
+//connectDB();
 app.set('view engine', 'ejs')
 app.get('/', (req, res) => {
  res.render('index')
