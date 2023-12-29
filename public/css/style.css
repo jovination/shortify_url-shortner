@@ -260,6 +260,7 @@ input[type="url"] {
     line-height: normal;
 }
 .shorten-btn{
+    font-family: 'poppins', sans-serif;
     border: none;
     border-radius: 32px;
     background: #7F52FF;
@@ -273,7 +274,16 @@ input[type="url"] {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transition-property: background-color;
+    transition-duration: .2s;
+    transition-timing-function: ease-in-out;
 
+
+    &:hover{
+        background: #000;
+        color  : #fff;
+        
+    }
 }
 .link-icon{
     width:25px;
@@ -320,6 +330,9 @@ input[type="url"] {
 .active{
     background: #7F52FF;
     color: #fff;
+    transition-property: background-color;
+    transition-duration: .2s;
+    transition-timing-function: ease-in-out;
 
 }
 .link1{
