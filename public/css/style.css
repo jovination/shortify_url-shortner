@@ -642,18 +642,33 @@ color: #7F52FF;
     align-items: center;
     position: relative;
 }
+.img__container{
+    width: 100px;
+    height: 100px;
+    background: #EFEFEF;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+#qr__code{
+    width: 90px;
+    height: 90px;
+}
+
 .qr__container{
-    width: 160px;
-    border-radius: 5px;
-    max-height: 0;
-    overflow: hidden;
+    width: 280px;
+    height: 130px;
+    background: #2D2E30;
+    display: none;
+    border-radius: 12px;
+    position: relative;
+
 }
-/*
-.qr__container img{
-    width: 100%;
-    padding: 10px;
-}
-*/
+
 
 .error{
     animation: shake 0.1s 10;

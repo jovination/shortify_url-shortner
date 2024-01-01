@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let generate__txt = "Generate QR";
     let shorten__txt = shortenBtn.textContent; 
     let qr__code = document.getElementById('qr__code');
+    let qr__container = document.querySelector('.qr__container');
     let loader = document.querySelector('.loader'); // add this line
 
 
@@ -30,6 +31,8 @@ document.addEventListener('DOMContentLoaded', function() {
             url__txt.placeholder = original__url;
             shortenBtn.textContent = shorten__txt;
             qr__code.src = "";
+            qr__container.style.display ="none";
+
         }
     };
 
@@ -64,7 +67,8 @@ document.addEventListener('DOMContentLoaded', function() {
         //the qr code API to the qr__code div
             qr__code.src = "https://api.qrserver.com/v1/create-qr-code/?size=130x130&data=" + url__txt.value;
             qr__code.onload = function() {
-                loader.style.display = 'none'; // hide the loader when the QR code has loaded
+             loader.style.display = 'none'; // hide the loader when the QR code has loaded
+             qr__container.style.display = 'block'; // show the QR code container
             };
          
 }
@@ -91,6 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
         fun__qr2.style.display = 'block';
         fun__link1.style.display = 'none';
         fun__link2.style.display = 'block';
+        
     }
 
     showLinkIcon1();
