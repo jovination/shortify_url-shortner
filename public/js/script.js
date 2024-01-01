@@ -20,13 +20,14 @@ document.addEventListener('DOMContentLoaded', function() {
     let loader = document.querySelector('.loader'); // add this line
     let downloadBtn = document.querySelector('.Btn');
 
+    
     function downloadImage() {
         const imageUrl = qr__code.src;
         if (imageUrl) {
             // Create an anchor element to trigger the download
             const downloadLink = document.createElement('a');
             
-        // Use XMLHttpRequest to download the image
+            // Use XMLHttpRequest to download the image
             const xhr = new XMLHttpRequest();
             xhr.open('GET', imageUrl, true);
             xhr.responseType = 'blob';
@@ -34,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const urlCreator = window.URL || window.webkitURL;
                 const imageUrl = urlCreator.createObjectURL(this.response);
                 downloadLink.href = imageUrl;
-                downloadLink.download = 'qr_code.png'; // You can set the desired filename
+                downloadLink.download = url__txt.value.replace(/[^\w\s]/gi, '') + '.png'; // You can set the desired filename
                 
                 // Programmatically click the download link
                 downloadLink.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true, view: window }));
