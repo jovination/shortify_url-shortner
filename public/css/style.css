@@ -280,7 +280,7 @@ input[type="url"] {
 
 
     &:hover{
-        background: #000;
+        background:  #2D2E30;
         color  : #fff;
         
     }
@@ -646,7 +646,7 @@ color: #7F52FF;
     width: 100px;
     height: 100px;
     background: #EFEFEF;
-    border-radius: 6px;
+    border-radius: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -868,7 +868,7 @@ display: none;
   
   
   .Btn:hover {
-    background-color: #7F52FF;
+    background-color: #7F52FF ;
     transition-duration: .3s;
   }
   
