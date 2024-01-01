@@ -868,7 +868,7 @@ display: none;
   
   
   .Btn:hover {
-    background-color: rgb(150, 94, 255);
+    background-color: #7F52FF;
     transition-duration: .3s;
   }
   
