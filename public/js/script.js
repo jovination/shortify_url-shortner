@@ -18,9 +18,37 @@ document.addEventListener('DOMContentLoaded', function() {
     let qr__code = document.getElementById('qr__code');
     let qr__container = document.querySelector('.qr__container');
     let loader = document.querySelector('.loader'); // add this line
+    let downloadBtn = document.querySelector('.Btn');
 
-
-
+    function downloadImage() {
+        const imageUrl = qr__code.src;
+        if (imageUrl) {
+            // Create an anchor element to trigger the download
+            const downloadLink = document.createElement('a');
+            
+        // Use XMLHttpRequest to download the image
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', imageUrl, true);
+            xhr.responseType = 'blob';
+            xhr.onload = function() {
+                const urlCreator = window.URL || window.webkitURL;
+                const imageUrl = urlCreator.createObjectURL(this.response);
+                downloadLink.href = imageUrl;
+                downloadLink.download = 'qr_code.png'; // You can set the desired filename
+                
+                // Programmatically click the download link
+                downloadLink.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true, view: window }));
+                
+                // Clean up the object URL to avoid memory leaks
+                window.setTimeout(function() {
+                    urlCreator.revokeObjectURL(imageUrl);
+                }, 100);
+            };
+            xhr.send();
+        } else {
+            console.error('QR code image source is empty.');
+        }
+    }
 
     fun__btn1.onclick = () => {
         fun__btn1.classList.add('active');
@@ -50,6 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if(fun__btn2.classList.contains('active')) {
             if(url__txt.value.trim() !== '') {
                 loader.style.display = 'block'; // show the loader
+                qr__container.style.display = 'none'; // hide the QR code container
                 setTimeout(generateQr, 500); // delay of 500ms before generating the QR code
             } else {
                 // If url__txt is empty, add the 'error' class to it
@@ -65,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function generateQr() {
         //the qr code API to the qr__code div
-            qr__code.src = "https://api.qrserver.com/v1/create-qr-code/?size=130x130&data=" + url__txt.value;
+            qr__code.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + url__txt.value;
             qr__code.onload = function() {
              loader.style.display = 'none'; // hide the loader when the QR code has loaded
              qr__container.style.display = 'block'; // show the QR code container
@@ -99,5 +128,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     showLinkIcon1();
+    downloadBtn.onclick = downloadImage;
 });
 
