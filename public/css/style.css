@@ -666,7 +666,7 @@ color: #7F52FF;
     display: none;
     border-radius: 12px;
     position: relative;
-    animation: qr__Container 900ms ease 100ms 1 normal forwards;
+    animation: qr__Container 900ms ease 0s 1 normal forwards;
 }
 
 @keyframes qr__Container {
@@ -680,6 +680,7 @@ color: #7F52FF;
 		transform: scale(1);
 	}
 }
+
 .error{
     animation: shake 0.1s 10;
 
