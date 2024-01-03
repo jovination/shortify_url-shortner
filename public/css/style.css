@@ -666,7 +666,7 @@ color: #7F52FF;
     display: none;
     border-radius: 12px;
     position: relative;
-    animation: qr__Container 600ms ease 0s 1 normal forwards;
+    animation: qr__Container 500ms ease 0s 1 normal forwards;
 }
 
 @keyframes qr__Container {
