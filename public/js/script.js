@@ -75,6 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
     shortenBtn.onclick = () => {
         // Clear the QR code
         qr__code.src = "";
+        qr__container.style.display = 'none';
     
         if(fun__btn2.classList.contains('active')) {
             if(url__txt.value.trim() !== '') {
