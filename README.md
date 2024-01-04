@@ -8,4 +8,26 @@
 <h2>2. Create QR Codes:</h2>
 <p>Shortify doesn't stop at shortening links. It can also make those square codes you often see. Scan these with your phone, and it takes you right to a website. It's like magic, but in a QR code!</p>
 
-![sh2](https://github.com/jovination/shortify_url-shortner/assets/79380563/c21b2a45-57bd-4c3b-85d3-3201e044ed6c)
+   ![sh2](https://github.com/jovination/shortify_url-shortner/assets/79380563/c21b2a45-57bd-4c3b-85d3-3201e044ed6c)
+
+# Technology Stack
+- Node.js: Powering the server-side development for robust and scalable performance.
+- EJS Templating: Creating dynamic and interactive HTML pages for an intuitive user interface.
+- MongoDB: Ensuring secure and flexible data storage for link management.
+- External APIs: [qrcode generator api]
+<h1>Getting Started</h1> 
+<h3>1. Clone the Repository:</h3>
+
+```shell
+
+git clone https://github.com/jovination/shortify_url-shortner.git
+
+```
+<h3>2. Install Dependencies:</h3>
+
+```shell
+
+cd shortify_url-shortner
+npm install
+
+```
