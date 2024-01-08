@@ -37,4 +37,10 @@ npm install
 npn run devStart
 
 ```
-<h3></h3>
+<h3>4. Access the application at</h3>
+
+```shell
+http://localhost:5000
+
+```
+
