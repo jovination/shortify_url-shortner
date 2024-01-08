@@ -31,3 +31,10 @@ cd shortify_url-shortner
 npm install
 
 ```
+<h3>3.Run the Application: </h3>
+
+```shell
+npn run devStart
+
+```
+<h3></h3>
