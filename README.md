@@ -45,3 +45,8 @@ http://localhost:5000
 ```
 # Live Demo
 
+```shell
+
+https://shortify-url-shortner-qrcode-generator.onrender.com/
+
+```
