@@ -31,3 +31,22 @@ cd shortify_url-shortner
 npm install
 
 ```
+<h3>3.Run the Application: </h3>
+
+```shell
+npn run devStart
+
+```
+<h3>4. Access the application at</h3>
+
+```shell
+http://localhost:5000
+
+```
+# Live Demo
+
+```shell
+
+https://shortify-url-shortner-qrcode-generator.onrender.com/
+
+```
