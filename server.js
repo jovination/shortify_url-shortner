@@ -12,7 +12,10 @@ app.get('/', (req, res) => {
 })
 
 app.use(express.static(__dirname + '/public'));
-app.listen(process.env.PORT || 5000);
+app.listen(process.env.PORT || 5000, () => {
+    console.log('Server is running...');
+});
+
 
 //my fuction codes are HERE
 
