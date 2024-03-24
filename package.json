@@ -6,9 +6,10 @@
   "scripts": {
     "scss": "node-sass public/css/style.scss public/css/style.css",
     "watch:scss": "npm run scss -- --watch",
-    "start": "npm-run-all -p watch:scss start:server",
+    "start": "npm run watch:scss & npm run start:server",
     "start:server": "nodemon server.js"
   },
+  
   "author": "",
   "license": "ISC",
   "dependencies": {
