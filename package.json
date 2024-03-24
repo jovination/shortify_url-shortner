@@ -4,12 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "scss": "node-sass public/css/style.scss public/css/style.css",
+    "scss": "sass public/css/style.scss public/css/style.css",
     "watch:scss": "npm run scss -- --watch",
     "start": "npm run watch:scss & npm run start:server",
     "start:server": "nodemon server.js"
   },
-  
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -19,7 +18,7 @@
     "mongodb": "^6.3.0",
     "mongoose": "^7.6.7",
     "mongose": "^0.0.2-security",
-    "node-sass": "^9.0.0",
+    "sass": "^1.72.0",
     "shortid": "^2.2.16",
     "valid-url": "^1.0.9"
   },
