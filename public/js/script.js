@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let qr__container = document.querySelector('.qr__container');
     let loader = document.querySelector('.loader'); // add this line
     let downloadBtn = document.querySelector('.Btn');
+    let shorten__form = document.getElementById('shortenForm');
 
     
     function downloadImage() {
@@ -130,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function generateShortUrl(){
-        
+
     }
 
     showLinkIcon1();
