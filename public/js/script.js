@@ -129,6 +129,10 @@ document.addEventListener('DOMContentLoaded', function() {
         
     }
 
+    function generateShortUrl(){
+        
+    }
+
     showLinkIcon1();
     downloadBtn.onclick = downloadImage;
 });
