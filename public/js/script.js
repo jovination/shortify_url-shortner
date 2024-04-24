@@ -129,10 +129,30 @@ document.addEventListener('DOMContentLoaded', function() {
         fun__link2.style.display = 'block';
         
     }
+        /*
 
     function generateShortUrl(){
-
-    }
+        // Get the full URL from the input field
+        const fullUrl = url__txt.value;
+        
+        // Make a POST request to the server to shorten the URL
+        fetch('/shorten-url', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ url: fullUrl })
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Display the shortened URL
+            url__txt.value = data.shortenedUrl;
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            
+        });
+        */
 
     showLinkIcon1();
     downloadBtn.onclick = downloadImage;
