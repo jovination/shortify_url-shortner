@@ -153,14 +153,14 @@ document.addEventListener('DOMContentLoaded', function() {
         // Display the loader
         loader.style.display = 'block';
 
-        // Make a POST request to the server to shorten the URL
-        fetch('/api/v2/link', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ url: fullUrl })
-        })
+         // Make a POST request to the server to shorten the URL
+    fetch('/api/v2/link', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ url: fullUrl })
+    })
 
         .then(response => {
             if (!response.ok) {
@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function() {
              url__container.style.display = 'block';
 
            // Display the shortened URL
-           let fullUrl = url__txt.value;
+             let fullUrl = url__txt.value;
              fullUrl.value = data.shrtlnk;
              let shorten__url = data.shrtlnk;
              
@@ -184,7 +184,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         })
         .catch(error => {
-            console.error('Error:', error);
             loader.style.display = 'none';
             console.error('Error:', error)
         });
