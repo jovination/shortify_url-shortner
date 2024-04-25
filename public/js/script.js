@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let qr__container = document.querySelector('.qr__container');
     let loader = document.querySelector('.loader'); // add this line
     let downloadBtn = document.querySelector('.Btn');
-    let shorten__form = document.getElementById('shortenForm');
+    let url__container = document.querySelector('.url__container');
 
     
     function downloadImage() {
@@ -63,6 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
             shortenBtn.textContent = shorten__txt;
             qr__code.src = "";
             qr__container.style.display ="none";
+            
 
         }
     };
@@ -72,12 +73,16 @@ document.addEventListener('DOMContentLoaded', function() {
         fun__btn1.classList.remove('active');
         showQrIcon1();
         generateQrCode();
+        if (fun__btn2.classList.contains('active')) {
+            url__container.style.display = 'none';
+        }
     };
 
     shortenBtn.onclick = () => {
         // Clear the QR code
         qr__code.src = "";
         qr__container.style.display = 'none';
+        
     
         if(fun__btn2.classList.contains('active')) {
             if(url__txt.value.trim() !== '') {
@@ -95,7 +100,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         else{
             if(url__txt.value.trim() !== ''){
-                setTimeout(generateShortUrl, 500);            
+                //loader.style.display = 'block'; // show the loader
+                setTimeout(generateShortUrl, 2);  //delay of 2ms before generating the  generateShortUrl      
             }
 
         else{
@@ -164,8 +170,8 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(data => {
             // Display the shortened URL
              fullUrl.value = data.shrtlnk;
-            console.log(data.shrtlnk);
-        
+          let shorten__url = data.shrtlnk;
+          document.getElementById('shortenedUrl').innerHTML = `<p><a href="${shorten__url}" target="_blank">${shorten__url}</a></p>`;
         })
         .catch(error => {
             console.error('Error:', error);
