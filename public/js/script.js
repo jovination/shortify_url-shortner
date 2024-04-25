@@ -91,6 +91,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 }, 1000);
             }
         }
+        else{
+            
+            url__txt.classList.add('error');
+            setTimeout(() => {
+                url__txt.classList.remove('error'); // Remove the 'error' class after 1 second
+            }, 1000); 
+        }
     };
     
     
