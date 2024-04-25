@@ -72,13 +72,10 @@ document.addEventListener('DOMContentLoaded', function() {
         fun__btn1.classList.remove('active');
         showQrIcon1();
         generateQrCode();
-        if (fun__btn2.classList.contains('active')) {
-            url__container.style.display = 'none';
-        }
+        
     };
 
     shortenBtn.onclick = () => {
-        // Clear the QR code
         qr__code.src = "";
         qr__container.style.display = 'none';
         
@@ -88,7 +85,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 loader.style.display = 'block'; // show the loader
                 qr__container.style.display = 'none'; // hide the QR code container
                 setTimeout(generateQr, 500); // delay of 500ms before generating the QR code
-            } else {
+            } 
+            
+            else {
                 // If url__txt is empty, add the 'error' class to it
                 url__txt.classList.add('error');
                 setTimeout(() => {
@@ -99,11 +98,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         else{
             if(url__txt.value.trim() !== ''){
-                //loader.style.display = 'block'; // show the loader
                 setTimeout(generateShortUrl, 2);  //delay of 2ms before generating the  generateShortUrl      
             }
 
-        else{
+             else
+        {
             url__txt.classList.add('error');
             setTimeout(() => {
                 url__txt.classList.remove('error'); // Remove the 'error' class after 1 second
@@ -150,8 +149,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function generateShortUrl() {
         // Get the full URL from the input field
-        let fullUrl = url__txt.value;
-    
+         
+        // Display the loader
+        loader.style.display = 'block';
+
         // Make a POST request to the server to shorten the URL
         fetch('/api/v2/link', {
             method: 'POST',
@@ -160,22 +161,33 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             body: JSON.stringify({ url: fullUrl })
         })
+
         .then(response => {
             if (!response.ok) {
                 throw new Error('Failed to shorten URL');
             }
             return response.json();
         })
+
         .then(data => {
-            // Display the shortened URL
+            // Hide the loader and display the shortened URL
+             loader.style.display = 'none';
+             url__container.style.display = 'block';
+
+           // Display the shortened URL
+           let fullUrl = url__txt.value;
              fullUrl.value = data.shrtlnk;
-          let shorten__url = data.shrtlnk;
-          document.getElementById('shortenedUrl').innerHTML = `<p><a href="${shorten__url}" target="_blank">${shorten__url}</a></p>`;
+             let shorten__url = data.shrtlnk;
+             
+             document.getElementById('shortenedUrl').innerHTML = `<p><a href="${shorten__url}" target="_blank">${shorten__url}</a></p>`;
+             console.log(data.shrtlnk);
+
         })
         .catch(error => {
             console.error('Error:', error);
+            loader.style.display = 'none';
+            console.error('Error:', error)
         });
-        
     }
     
 
