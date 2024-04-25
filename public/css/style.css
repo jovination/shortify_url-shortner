@@ -899,8 +899,12 @@ input[type=url] {
     opacity: 1;
   }
 }/*# sourceMappingURL=style.css.map */
-
-.url__container{
+.url_container{
+  width: 318px;
+  height: 55px;
+  display: none;
+}
+.url__wrap{
   width: 318px;
   height: 55px;
   border-radius: 8px;
@@ -918,7 +922,7 @@ input[type=url] {
   align-items: center;
 }
 
-.url__container a{
+.url__wrap a{
   text-decoration: none;
   color: #7F52FF;
   font-weight: 500;

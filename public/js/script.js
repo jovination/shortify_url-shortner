@@ -63,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function() {
             shortenBtn.textContent = shorten__txt;
             qr__code.src = "";
             qr__container.style.display ="none";
-            
 
         }
     };
@@ -176,6 +175,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .catch(error => {
             console.error('Error:', error);
         });
+        
     }
     
 
