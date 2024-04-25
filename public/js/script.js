@@ -56,6 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
         fun__btn1.classList.add('active');
         fun__btn2.classList.remove('active');
         showLinkIcon1();
+        generateShortUrl();
         if (fun__btn1.classList.contains('active')) {
             f__header.innerHTML = original__txt; // set to original text
             url__txt.placeholder = original__url;
@@ -91,12 +92,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 }, 1000);
             }
         }
+
         else{
-            
+            if(url__txt.value.trim() !== ''){
+                setTimeout(generateShortUrl, 500);            
+            }
+
+        else{
             url__txt.classList.add('error');
             setTimeout(() => {
                 url__txt.classList.remove('error'); // Remove the 'error' class after 1 second
             }, 1000); 
+        }
         }
     };
     
@@ -108,9 +115,8 @@ document.addEventListener('DOMContentLoaded', function() {
             qr__code.onload = function() {
              loader.style.display = 'none'; // hide the loader when the QR code has loaded
              qr__container.style.display = 'block'; // show the QR code container
-            };
-         
-}
+            };      
+     }
     
 
 
@@ -136,30 +142,36 @@ document.addEventListener('DOMContentLoaded', function() {
         fun__link2.style.display = 'block';
         
     }
-        /*
 
-    function generateShortUrl(){
+    function generateShortUrl() {
         // Get the full URL from the input field
-        const fullUrl = url__txt.value;
-        
+        let fullUrl = url__txt.value;
+    
         // Make a POST request to the server to shorten the URL
-        fetch('/shorten-url', {
+        fetch('/api/v2/link', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({ url: fullUrl })
         })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to shorten URL');
+            }
+            return response.json();
+        })
         .then(data => {
             // Display the shortened URL
-            url__txt.value = data.shortenedUrl;
+             fullUrl.value = data.shrtlnk;
+            console.log(data.shrtlnk);
+        
         })
         .catch(error => {
             console.error('Error:', error);
-            
         });
-        */
+    }
+    
 
     showLinkIcon1();
     downloadBtn.onclick = downloadImage;

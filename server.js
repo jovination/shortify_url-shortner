@@ -1,4 +1,3 @@
-
 const express = require('express');
 const bodyParser = require('body-parser');
 const fetch = require('node-fetch'); // npm install node-fetch
@@ -25,39 +24,32 @@ app.post('/api/v2/link', async (req, res) => {
         // Get the URL from the request body
         const originalUrl = req.body.url;
 
-        // Make a POST request to the shortener API
-        const response = await axios.post(
-            'https://shrtlnk.dev/api/v2/link',
-            { url: originalUrl },
-            {
-                headers: {
-                    'api-key': apiKey,
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                }
-            }
-        );
+        const response = await fetch('https://shrtlnk.dev/api/v2/link', {
+            method: 'POST',
+            headers: {
+                'api-key': apiKey,
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ url: originalUrl })
+        });
+
+        // Check if response is successful
+        if (!response.ok) {
+            throw new Error('Failed to shorten URL');
+        }
+
+        // Parse the JSON response
+        const data = await response.json();
 
         // Extract response data
-        const { url, key, shrtlnk } = response.data;
+        const { url, key, shrtlnk } = data;
 
         // Send the response with the shortened URL
         res.json({ url, key, shrtlnk });
-    } 
-    
-    catch (error) {
+    } catch (error) {
         // Handle error response
-        if (error.response) {
-            // The request was made and the server responded with a status code
-            // that falls out of the range of 2xx
-            res.status(error.response.status).json({ message: error.response.data.message });
-        } else if (error.request) {
-            // The request was made but no response was received
-            res.status(500).json({ message: 'No response received from server' });
-        } else {
-            // Something happened in setting up the request that triggered an Error
-            res.status(500).json({ message: error.message });
-        }
+        res.status(500).json({ message: error.message });
     }
 });
 
@@ -68,6 +60,7 @@ app.use(express.static(__dirname + '/public'));
 app.get('/', (req, res) => {
     res.render('index');
 });
+
 // Start the server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
