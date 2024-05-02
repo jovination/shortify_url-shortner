@@ -56,7 +56,6 @@ document.addEventListener('DOMContentLoaded', function() {
         fun__btn1.classList.add('active');
         fun__btn2.classList.remove('active');
         showLinkIcon1();
-        generateShortUrl();
         if (fun__btn1.classList.contains('active')) {
             f__header.innerHTML = original__txt; // set to original text
             url__txt.placeholder = original__url;
