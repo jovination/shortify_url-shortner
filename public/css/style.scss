@@ -1059,7 +1059,7 @@ width: 100%;
     color: var(--button-hover-text-color);
   }
   /*mobile responsiveness */
-@media (max-width: 576px) {
+@media only screen and (max-width: 576px) {
     header{
      max-width: 576px;
       width: 100%;
@@ -1079,6 +1079,14 @@ body {
     margin: 0;
     padding: 0;
   }
+  main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
   .nav-buttons{
     display: none;
   }
