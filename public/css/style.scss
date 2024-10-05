@@ -278,6 +278,7 @@ width: 100%;
     border-radius: 32px;
     background: #7F52FF;
     color: #FFF;
+    font-family: Poppins;
     font-size: 15px;
     font-weight: 400;
     width: 128px;
@@ -289,8 +290,7 @@ width: 100%;
     transition-property: background-color;
     transition-duration: 0.2s;
     transition-timing-function: ease-in-out;
-    float: right; /* Add this to float right */
-}
+  }
 
   .shorten-btn:hover {
     background: #2D2E30;
@@ -1142,7 +1142,7 @@ body {
     align-items: center;
     flex-direction: column;
     justify-content: flex-start;
-    height: 2000px;
+    height: 2300px;
   }
   .wrapper2{
     width: 100%;
