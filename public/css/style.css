@@ -1270,6 +1270,12 @@ input[type=url] {
     position: absolute;
     left: 18px;
   }
+  .loader {
+    position: absolute;
+    top: 54px;
+    left: 170px;
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
