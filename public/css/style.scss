@@ -1133,8 +1133,21 @@ body {
     max-width: 345px;
     width: 100%;
   }
-
+  input[type=url] {
+    max-width: 194px;
+    width: 100%;
+    border: none; 
+    outline: none;
+    height: 48px;
+    background: transparent;
+    color: #1E1E1E;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    line-height: normal;
+  }
   .section-two{
+    margin-top: 70px;
     width: 100%;
     background: #fff;
     border-radius: 30px;
