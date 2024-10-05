@@ -1078,8 +1078,9 @@ input[type=url] {
   }
   body {
     width: 100%;
-    margin: 0;
-    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+    margin: 0 auto;
   }
   main {
     width: 100%;
@@ -1126,10 +1127,9 @@ input[type=url] {
     width: 95%;
   }
   .url-shortner {
+    margin: 0 auto;
     max-width: 345px;
     width: 100%;
-    margin-right: 10px;
-    margin-left: 10px;
   }
   .section-two {
     width: 100%;
