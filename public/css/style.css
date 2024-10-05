@@ -1104,13 +1104,12 @@ input[type=url] {
     flex-direction: column;
   }
   .left-column {
-    width: 100%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 20px;
-    height: 100vh;
-    padding: 20px;
+    height: 80vh;
   }
   .left-column h1 {
     font-size: 45px;
