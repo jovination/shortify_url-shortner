@@ -1140,7 +1140,7 @@ input[type=url] {
     background: transparent;
     color: #1E1E1E;
     font-family: Poppins;
-    font-size: 18px;
+    font-size: 15px;
     font-style: normal;
     line-height: normal;
   }
@@ -1153,7 +1153,7 @@ input[type=url] {
     align-items: center;
     flex-direction: column;
     justify-content: flex-start;
-    height: 2300px;
+    height: 2000px;
   }
   .wrapper2 {
     width: 100%;
@@ -1166,6 +1166,25 @@ input[type=url] {
     margin-top: 35px;
     width: 85%;
   }
+  .shorten-btn {
+    font-family: "poppins", sans-serif;
+    border: none;
+    border-radius: 32px;
+    background: #7F52FF;
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 400;
+    width: 128px;
+    height: 54px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition-property: background-color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+  }
   .wright-column {
     max-width: 85%;
     height: auto;
@@ -1173,7 +1192,7 @@ input[type=url] {
     border: 1.2px solid #A8A8A8;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     grid-row-gap: 20px;
   }
   .rec {
