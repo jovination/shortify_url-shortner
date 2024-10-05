@@ -202,17 +202,17 @@ width: 100%;
     width: 510px;
     height: 480px;
     flex-shrink: 0;
-    border-radius: 18px;
+    border-radius: 30px;
     background: #FFF;
     display: flex;
     flex-direction: column;
   }
   
   .decor-container {
-    align-items: center;
-    margin: 2em 1.8em;
     display: flex;
-    gap: 196px;
+    margin: 20px;
+    align-items: center;
+    justify-content: space-between;
   }
   
   .mac-menubar {
@@ -246,6 +246,8 @@ width: 100%;
   }
   
   .url-shortner {
+    max-width: 420px;
+    width: 100%;
     align-items: center;
     align-self: center;
     gap: 1em;
@@ -275,7 +277,6 @@ width: 100%;
     border-radius: 32px;
     background: #7F52FF;
     color: #FFF;
-    font-family: Poppins;
     font-size: 15px;
     font-weight: 400;
     width: 128px;
@@ -287,7 +288,9 @@ width: 100%;
     transition-property: background-color;
     transition-duration: 0.2s;
     transition-timing-function: ease-in-out;
-  }
+    float: right; /* Add this to float right */
+}
+
   .shorten-btn:hover {
     background: #2D2E30;
     color: #fff;
@@ -368,21 +371,21 @@ width: 100%;
   
   .wright-column {
     width: 620px;
-    height: 360px;
-    border-radius: 20px;
+    height: auto;
+    border-radius: 30px;
     border: 1.2px solid #A8A8A8;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 12px;
-    padding: 12px;
+    gap: 20px;
+    padding: 20px;
   }
   
   .rec {
     position: relative;
-    border-radius: 12px;
+    border-radius: 26px;
     background: #EFEFEF;
-    padding: 1.5em;
+    padding: 20px;
   }
   
   .rec h2 {
@@ -1112,13 +1115,12 @@ body {
     & h1{
         font-size: 45px;
     }
-    &p{
-        font-size: 18px;
-    }
   }
+ 
+  
   .right-column{
-    max-width: 345px;
     width: 100%;
+    margin: 20px;
   }
   
   }
