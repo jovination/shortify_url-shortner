@@ -246,11 +246,11 @@ width: 100%;
   }
   
   .url-shortner {
+    margin: 0 auto;
     max-width: 420px;
     width: 100%;
     align-items: center;
-    align-self: center;
-    gap: 1em;
+    justify-content: space-between;
     display: flex;
     border-radius: 36px;
     border: 1.5px solid #7E7E7F;
@@ -262,7 +262,6 @@ width: 100%;
     border: none; /* Remove the border */
     outline: none; /* Remove the outline when focused */
     height: 48px;
-    width: 220px;
     background: transparent;
     color: #1E1E1E;
     font-family: Poppins;
@@ -616,7 +615,7 @@ width: 100%;
     width: 260px;
     height: 270px;
     background: #353535;
-    border-radius: 15px;
+    border-radius: 30px;
     position: relative;
   }
   
