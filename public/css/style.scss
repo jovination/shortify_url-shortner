@@ -1108,7 +1108,7 @@ body {
     flex-direction: column;
     justify-content: center;
     gap: 20px;
-    height: 80vh;
+    height: 100vh;
     padding: 20px;
     & h1{
         font-size: 45px;
@@ -1117,11 +1117,13 @@ body {
  
   
   .right-column{
-    width: 100%;
+    width: 95%;
   }
   .url-shortner{
-    max-width: 350px;
+    max-width: 345px;
     width: 100%;
+    margin-right: 10px;
+    margin-left: 10px;
   }
 
   .section-two{
