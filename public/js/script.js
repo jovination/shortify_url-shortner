@@ -75,6 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
         fun__btn1.classList.remove('active');
         showQrIcon1();
         generateQrCode();
+        url__container.style.display ="none";
         
     };
 
@@ -134,6 +135,9 @@ document.addEventListener('DOMContentLoaded', function() {
             shortenBtn.textContent = generate__txt;
         }
     }
+
+    
+
 
     function showLinkIcon1() {
         fun__link1.style.display = 'block';
