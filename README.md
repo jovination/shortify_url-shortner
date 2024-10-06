@@ -5,6 +5,9 @@
 <h1>key Objective</h1>
 <h2>1. Make Links Shorter:</h2>
 <p>Ever see a web link that's super long and messy? Shortify fixes that! It turns those long links into short, sweet ones that are easy to remember and share.</p>
+
+![image](https://github.com/user-attachments/assets/be602959-ab40-47e9-a24c-d5ac9c375606)
+
 <h2>2. Create QR Codes:</h2>
 <p>Shortify doesn't stop at shortening links. It can also make those square codes you often see. Scan these with your phone, and it takes you right to a website. It's like magic, but in a QR code!</p>
 
@@ -13,8 +16,7 @@
 # Technology Stack
 - Node.js: Powering the server-side development for robust and scalable performance.
 - EJS Templating: Creating dynamic and interactive HTML pages for an intuitive user interface.
-- MongoDB: Ensuring secure and flexible data storage for link management.
-- External APIs: [qrcode generator api]
+- External APIs: [url and qrcode generator apis]
 <h1>Getting Started</h1> 
 <h3>1. Clone the Repository:</h3>
 
@@ -40,7 +42,7 @@ npn run devStart
 <h3>4. Access the application at</h3>
 
 ```shell
-http://localhost:5000
+http://localhost:5001
 
 ```
 # Live Demo
