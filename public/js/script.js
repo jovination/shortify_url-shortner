@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function() {
     let fun__btn1 = document.querySelector('.btn1');
     let fun__btn2 = document.querySelector('.btn2');
@@ -22,6 +21,15 @@ document.addEventListener('DOMContentLoaded', function() {
     let url__container = document.querySelector('.url_container');
     let copyBtn = document.querySelector('.copy');
     let shortenedUrlElement = document.getElementById('shortenedUrl');
+    
+
+    function triggerConfetti() {
+        confetti({
+            particleCount: 150,
+            spread: 60,
+            origin: { y: 0.7 } // Adjust origin as needed
+        });
+    }
 
 
 
@@ -123,6 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
             qr__code.onload = function() {
              loader.style.display = 'none'; // hide the loader when the QR code has loaded
              qr__container.style.display = 'block'; // show the QR code container
+             triggerConfetti();
             };      
      }
     
@@ -203,6 +212,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
             loader.style.display = 'none';
             url__container.style.display = 'block';
+            triggerConfetti();
+
     
             const shortUrl = data.shortUrl;
             document.getElementById('shortenedUrl').innerHTML = `
