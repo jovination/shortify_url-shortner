@@ -16,8 +16,7 @@
 # Technology Stack
 - Node.js: Powering the server-side development for robust and scalable performance.
 - EJS Templating: Creating dynamic and interactive HTML pages for an intuitive user interface.
-- MongoDB: Ensuring secure and flexible data storage for link management.
-- External APIs: [qrcode generator api]
+- External APIs: [url and qrcode generator apis]
 <h1>Getting Started</h1> 
 <h3>1. Clone the Repository:</h3>
 
