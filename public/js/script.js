@@ -20,6 +20,10 @@ document.addEventListener('DOMContentLoaded', function() {
     let loader = document.querySelector('.loader'); // add this line
     let downloadBtn = document.querySelector('.Btn');
     let url__container = document.querySelector('.url_container');
+    let copyBtn = document.querySelector('.copy');
+    let shortenedUrlElement = document.getElementById('shortenedUrl');
+
+
 
     
     function downloadImage() {
@@ -145,6 +149,22 @@ document.addEventListener('DOMContentLoaded', function() {
         fun__link2.style.display = 'block';
         
     }
+
+    function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).catch(err => {
+            console.error("Failed to copy text: ", err);
+        });
+    }
+        copyBtn.onclick = function() {
+  const shortUrl = shortenedUrlElement.querySelector('a')?.textContent;
+
+  if (shortUrl) {
+      copyToClipboard(shortUrl);      
+      
+  } else {
+      console.error("No URL found to copy.");
+  }
+}
 
     async function generateShortUrl() {
         const fullUrl = url__txt.value.trim();
