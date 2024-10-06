@@ -1274,7 +1274,7 @@ input[type=url] {
   .loader {
     position: absolute;
     top: 54px;
-    left: 170px;
+    left: 195px;
     display: none;
   }
 }
