@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
         confetti({
             particleCount: 150,
             spread: 60,
-            origin: { y: 0.7 } // Adjust origin as needed
         });
     }
 
