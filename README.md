@@ -5,6 +5,9 @@
 <h1>key Objective</h1>
 <h2>1. Make Links Shorter:</h2>
 <p>Ever see a web link that's super long and messy? Shortify fixes that! It turns those long links into short, sweet ones that are easy to remember and share.</p>
+
+![image](https://github.com/user-attachments/assets/be602959-ab40-47e9-a24c-d5ac9c375606)
+
 <h2>2. Create QR Codes:</h2>
 <p>Shortify doesn't stop at shortening links. It can also make those square codes you often see. Scan these with your phone, and it takes you right to a website. It's like magic, but in a QR code!</p>
 
