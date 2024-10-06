@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let qr__container = document.querySelector('.qr__container');
     let loader = document.querySelector('.loader'); // add this line
     let downloadBtn = document.querySelector('.Btn');
-    let url__container = document.querySelector('.url__container');
+    let url__container = document.querySelector('.url_container');
 
     
     function downloadImage() {
@@ -146,47 +146,53 @@ document.addEventListener('DOMContentLoaded', function() {
         
     }
 
-    function generateShortUrl() {
-        // Get the full URL from the input field
-         
-        // Display the loader
+    async function generateShortUrl() {
+        const fullUrl = url__txt.value.trim();
+    
+        // Validate the input
+        if (!fullUrl) {
+            alert('Please enter a URL to shorten.');
+            return;
+        }
+        console.log(fullUrl)
+    
         loader.style.display = 'block';
-
-         // Make a POST request to the server to shorten the URL
-    fetch('/api/v2/link', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ url: fullUrl })
-    })
-
-        .then(response => {
+    
+        url__container.style.display = 'none';
+        document.getElementById('shortenedUrl').innerHTML = '';
+    
+        try {
+            const response = await fetch('/api/v2/link', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ url: fullUrl })
+            });
+    
             if (!response.ok) {
-                throw new Error('Failed to shorten URL');
+                const errorData = await response.json();
+                throw new Error(errorData.message || 'Failed to shorten URL');
             }
-            return response.json();
-        })
-
-        .then(data => {
-            // Hide the loader and display the shortened URL
-             loader.style.display = 'none';
-             url__container.style.display = 'block';
-
-           // Display the shortened URL
-             let fullUrl = url__txt.value;
-             fullUrl.value = data.shrtlnk;
-             let shorten__url = data.shrtlnk;
-             
-             document.getElementById('shortenedUrl').innerHTML = `<p><a href="${shorten__url}" target="_blank">${shorten__url}</a></p>`;
-             console.log(data.shrtlnk);
-
-        })
-        .catch(error => {
+    
+            const data = await response.json();
+    
             loader.style.display = 'none';
-            console.error('Error:', error)
-        });
+            url__container.style.display = 'block';
+    
+            const shortUrl = data.shortUrl;
+            document.getElementById('shortenedUrl').innerHTML = `
+                <a href="${shortUrl}" target="_blank">${shortUrl}</a>
+            `;
+    
+            console.log('Shortened URL:', shortUrl);
+        } catch (error) {
+            loader.style.display = 'none';
+            alert(`Error: ${error.message}`);
+            console.error('Error:', error);
+        }
     }
+    
     
 
     showLinkIcon1();

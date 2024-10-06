@@ -13,42 +13,40 @@ const app = express();
 app.set('view engine', 'ejs');
 
 // Middleware to parse JSON requests
-app.use(bodyParser.json());
+app.use(express.json());
 
-// Define API key
-const apiKey = 'AamxlsFiIi5YMnYPTvqJSo9JYmofJPAE8KAURCahszlU7'; // Replace 'Your_API_Key' with your actual API key
-
-// POST endpoint to shorten a URL
 app.post('/api/v2/link', async (req, res) => {
     try {
-        // Get the URL from the request body
         const originalUrl = req.body.url;
+        console.log(originalUrl)
 
-        const response = await fetch('https://shrtlnk.dev/api/v2/link', {
-            method: 'POST',
-            headers: {
-                'api-key': apiKey,
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ url: originalUrl })
-        });
-
-        // Check if response is successful
-        if (!response.ok) {
-            throw new Error('Failed to shorten URL');
+        if (!originalUrl) {
+            return res.status(400).json({ message: 'URL is required' });
         }
 
-        // Parse the JSON response
+        const isGdApiUrl = `https://is.gd/create.php?format=json&url=${encodeURIComponent(originalUrl)}`;
+
+        const response = await fetch(isGdApiUrl, {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(`is.gd API responded with status ${response.status}`);
+        }
+
         const data = await response.json();
 
-        // Extract response data
-        const { url, key, shrtlnk } = data;
+        if (data.errorcode && data.errorcode !== 0) {
+            throw new Error(data.errormessage || 'Error shortening the URL');
+        }
 
-        // Send the response with the shortened URL
-        res.json({ url, key, shrtlnk });
+        res.json({ shortUrl: data.shorturl });
     } catch (error) {
-        // Handle error response
+        console.error('Error:', error.message);
         res.status(500).json({ message: error.message });
     }
 });
