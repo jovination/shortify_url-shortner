@@ -914,6 +914,7 @@ input[type=url] {
   width: 318px;
   height: 55px;
   display: none;
+  animation: qr__Container 500ms ease 0s 1 normal forwards;
 }
 
 .url__wrap {
