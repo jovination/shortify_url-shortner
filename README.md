@@ -36,7 +36,7 @@ npm install
 <h3>3.Run the Application: </h3>
 
 ```shell
-npn run devStart
+npn run start
 
 ```
 <h3>4. Access the application at</h3>
